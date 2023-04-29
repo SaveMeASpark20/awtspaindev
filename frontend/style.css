@@ -20,7 +20,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding: var(--navigationOffsetHeight, 2rem);
+    scroll-padding: var(--navigationOffsetHeight, 1rem);
 }
 
 body {
@@ -56,28 +56,30 @@ a {
     margin: 22px 30px 118px;
     align-items: center;
     position: relative;
-    column-gap: 50px;
 }
 
 .nav-project-logo-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
-    justify-content: space-between;
+    justify-items: start;
+    gap: 5px;
 }
 
 .nav-project {
     list-style: none;
-    padding: 28px 34px;
+    padding: 20px 34px;
     background-color: rgb(0, 0, 0);
-    font-size: 3.2rem;
+    font-size: 2rem;
     font-family: regularFont, 'Times New Roman', Times;
 }
 
 
 
 .nav-logo {
-    font-size: 4rem;
+    font-size: 3rem;
     font-family: boldFont, 'Times New Roman', Times;
+    justify-self: end;
 }
 
 
@@ -85,7 +87,6 @@ a {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-items: end;
-
 }
 
 .nav-links-social-media li {
@@ -100,8 +101,8 @@ a {
     width: 35px;
     cursor: pointer;
     position: absolute;
-    top: 35px;
-    right: 3%;
+    top: 15px;
+    right: 0;
 }
 
 .icon {
@@ -116,7 +117,7 @@ a {
     align-items: center;
     justify-content: center;
     column-gap: 110px;
-    padding-bottom: 212px;
+    padding-bottom: 100px;
     gap: 20px;
 }
 
@@ -124,8 +125,9 @@ a {
     background-image: url("hero-image.jpg");
     background-size: cover;
     background-position: center center;
-    width: 500px;
-    height: 700px;
+    min-width: 300px;
+    width: 40%;
+    height: 600px;
     box-shadow: 0 5px 5px 5px rgba(0,0,0,0.2);
     animation: animate 5s ease-in-out infinite;
     transition: all 1s ease-in-out;
@@ -164,7 +166,8 @@ a {
 .form {
     display: flex;
     justify-content: center;
-    column-gap: 26px;
+    align-items: center;
+    gap: 26px;
 }
 
 .email-text-input {
@@ -216,7 +219,10 @@ textarea {
 
 
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 900px) {
+    h1{
+        font-size: 3rem;
+    }
     .hamburger-icon {
         display: flex;
     }
@@ -232,8 +238,11 @@ textarea {
     }
 
     .nav-project-logo-row {
-        justify-content: flex-start;
-        column-gap: 30px;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .nav-logo{
+        justify-self: start;
     }
 
     .nav-links-social-media.active {
@@ -253,5 +262,23 @@ textarea {
     .email {
         padding: 50px 10px;
     }
+    .form {
+        flex-direction: column;
+    }
+    button[type="submit"] {
+        align-self: center;
+    }
 }
 
+@media screen and (max-width: 400px) {
+    .nav-project {
+        font-size: 2rem;
+        padding: 15px 25px;
+    }
+
+    .nav-logo {
+        font-size: 2.5rem;
+        width: 75%;
+        text-align: center;
+    }
+}
