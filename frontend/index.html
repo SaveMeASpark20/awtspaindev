@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awtspain Dev</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-project-logo-row">
+                <div class="nav-project-col">
+                    <a href="#projects"><li class="nav-project">PROJECTS</li></a>    
+                </div>
+                <div class="nav-logo">AWTSPAIN DEV</div>
+            </div>
+            <ul class="nav-links-social-media">
+                <li class="link">
+                    <a href="https://www.facebook.com/profile.php?id=100090889931154" target="_blank">
+                        <img src="icons/facebook.svg">
+                    </a> 
+                </li>
+
+                <li class="link">
+                    <a href="https://twitter.com/AwtspainD" target="_blank">
+                        <img src="icons/twitter.svg">
+                    </a>  
+                </li>
+
+                <li class="link">
+                    <a href="https://www.instagram.com/awtspaindev/" target="_blank">
+                        <img src="icons/instagram.svg">
+                    </a>   
+                </li>
+                
+                <li class="link">
+                    <a href="https://www.linkedin.com/in/christian-leguiz-42b637273/" target="_blank">
+                        <img src="icons/linkedin.svg">        
+                    </a>  
+                </li>
+            
+            </ul>
+            <div class="hamburger-icon">
+                <span class="icon"></span>
+                <span class="icon"></span>
+                <span class="icon"></span>
+            </div>
+        </nav>
+    </header>
+    <section class="hero">
+        <div class="hero-image">
+        </div>
+        <div class="hero-text">
+            <h1>I am WEB<br>
+                DEVELOPER
+            </h1>
+            <li><a href="#email-section" class="email-me">Email Me</a></li>
+        </div>
+    </section>
+    <section class="email" id="email-section">
+        <form class="form" id="form" onsubmit="sendEmail()">
+            <div class="email-text-input">
+                <input type="email"  name="email" style="font-size: 27px;  height: 107px; width: 100%;" placeholder="EMAIL: " id="email" required>            
+                <textarea cols="50" name="message" style="font-size: 27px;  height: 216px; width: 100%;" placeholder="Message: " id="message" required></textarea>
+            </div>
+                <button type="submit">Send</button>
+        </form>
+    </section>
+    <section class="projects" id="projects">
+        <div class="project">
+            <h1>Javascript TODO LIST </h1>
+            <a href="https://savemeaspark20.github.io/todo-list/" target="_blank">
+                <img src="javascript-todolist.svg">
+            </a>
+            <h1>Note taking app using MERN stack </h1>
+            <a href="https://mern-note-taking-app.onrender.com/" target="_blank">
+                <img src="Mern NotesTaking.svg">
+            </a>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+    <script src="send.js"></script>
+    
+</body>
+</html>
