@@ -25,19 +25,32 @@ html {
 
 body {
     font-size: 1.6rem;
+    
 }
 
 h1{
     font-family: boldFont;
-    font-size: 6.4rem;
+    font-size: 5rem;
+
 }
+
+h2{
+    font-family: boldFont;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
+    margin: 2rem 0;
+    text-align: center;
+}
+
+
 
 button{
     font-family: regularFont;
     color: white;
     background-color: black;
-    font-size: 2.7rem;
-    padding: 20px 63px;
+    font-size: 4rem;
+    padding: 1.7rem 4.4rem;
+    border: none;
 }
 li {
     list-style: none;
@@ -51,58 +64,64 @@ a {
 
 /* **************************Navbar*********************************** */
 .navbar {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 22px 30px 118px;
+    padding: 2rem 3rem 8rem 3rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     align-items: center;
     position: relative;
 }
 
-.nav-project-logo-row {
+.nav-project-col {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: flex-start;
     align-items: center;
-    justify-items: start;
-    gap: 5px;
+}
+
+
+.nav-project-logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .nav-project {
+    justify-content: flex-start;
     list-style: none;
-    padding: 20px 34px;
+    padding: 0.8rem 1.2rem;
     background-color: rgb(0, 0, 0);
-    font-size: 2rem;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.78rem + 1.42vw, 2.5rem);
     font-family: regularFont, 'Times New Roman', Times;
 }
 
 
 
 .nav-logo {
-    font-size: 3rem;
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.25rem + 1.61vw, 3.2rem);
     font-family: boldFont, 'Times New Roman', Times;
-    justify-self: end;
+    justify-self: center;
 }
 
 
 .nav-links-social-media {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-items: end;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
 }
 
-.nav-links-social-media li {
-    list-style: none;
-}
 
 .hamburger-icon {
     display: none;
     flex-direction: column;
     justify-content: space-between;
-    height: 30px;
-    width: 35px;
+    height: 25px;
+    width: 30px;
     cursor: pointer;
     position: absolute;
-    top: 15px;
-    right: 0;
+    top: 25px;
+    right: 25px;
 }
 
 .icon {
@@ -116,31 +135,35 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    column-gap: 110px;
     padding-bottom: 100px;
-    gap: 20px;
+    gap: 4.2rem;
 }
 
 .hero-image {
-    background-image: url("hero-image.jpg");
+    background-image: url("images/hero-image.jpg");
     background-size: cover;
     background-position: center center;
     min-width: 300px;
-    width: 40%;
-    height: 600px;
+    width: 44.4rem;
+    height: 44.4rem;
     box-shadow: 0 5px 5px 5px rgba(0,0,0,0.2);
     animation: animate 5s ease-in-out infinite;
     transition: all 1s ease-in-out;
 }
 
-.hero-text h1 {
-    margin-bottom: 27px;
+.hero-text {
+    font-size: 6.4rem;
 }
 
 .email-me {
-    padding: 22px 61px;
-    font-size: 27px;
+    padding: 1.6rem;
+    font-size: 1.6rem;
     background-color: black;
+    font-family: regularFont, 'Times New Roman', Times;
+}
+
+.email {
+    padding: 50px 10px;
 }
 
 
@@ -160,14 +183,17 @@ a {
 
 .email {
     background-color: black;
-    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .form {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 26px;
+    gap: 4.2rem;
 }
 
 .email-text-input {
@@ -176,28 +202,43 @@ a {
     row-gap: 26px;
 }
 
+.email-text-input input {
+    font-size: 2rem;  
+    height: 8rem;
+    width: 44.4rem;
+}
+
+.email-text-input textarea {
+    font-size: 2rem;
+    height: 15rem;
+    width: 44.4rem;
+}
+
 .form input {
     align-items: center;
 }
 
 button[type="submit"] {
     align-self: flex-end;
+    padding: 1.6rem;
+    font-size: 2.3rem;
+    font-family: regularFont, 'Times New Roman', Times;
     color: black;
     background-color: white;
 }
 
 input, textarea{
-    padding: 28px;
+    padding: 2rem;
 }
 
 textarea {
-    padding-top: 27px;
+    height: 44.4rem;
     resize: none;  
 }
 
 /* ***********Project Section***************** */
 .projects {
-    padding: 30px;
+    padding: 2rem 3rem;
 }
 
 .project {
@@ -206,20 +247,51 @@ textarea {
     align-items: center;
 }
 
-.project img {
-    width: 100%;
-    border: 1px solid black;
+.images-description {
+    display: flex;
+    gap: 4.2rem;
+    /* flex-wrap: wrap; */
 }
 
-.project a {
-    width: 80%;
+.images-description img {
+    width: 60rem;
+    border: 1px solid black;
 }
+.images-description > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.stack span {
+    padding: .5rem 1rem;
+    color: white;
+    background-color: black;
+}
+
 
 /***********************media screen***************************/
 
 
 
 @media screen and (max-width: 900px) {
+    .nav-project-col {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .nav-logo{
+        justify-self: flex-end;
+    }
+
     h1{
         font-size: 3rem;
     }
@@ -231,19 +303,6 @@ textarea {
         display: none;
     }
 
-    .navbar {
-        grid-template-columns: 1fr;
-        margin: 10px 10px 50px;
-    
-    }
-
-    .nav-project-logo-row {
-        grid-template-columns: 1fr 2fr;
-    }
-
-    .nav-logo{
-        justify-self: start;
-    }
 
     .nav-links-social-media.active {
         display: flex;
@@ -253,6 +312,11 @@ textarea {
 
     .hero {
         flex-direction: column;
+    }
+
+    .hero-image{
+        width: 34.4rem;
+        height: 34.4rem;
     }
 
     .hero-text {
@@ -268,17 +332,46 @@ textarea {
     button[type="submit"] {
         align-self: center;
     }
-}
 
-@media screen and (max-width: 400px) {
-    .nav-project {
-        font-size: 2rem;
-        padding: 15px 25px;
+    .email-text-input textarea {
+        width: 100%;
+    }
+    .email-text-input input {
+        width: 100%;
     }
 
-    .nav-logo {
-        font-size: 2.5rem;
-        width: 75%;
-        text-align: center;
+    .images-description {
+        flex-direction: column;
+    }
+
+    .images-description img {
+        width: 100%;
     }
 }
+
+
+@media screen and (max-width: 600px){
+
+    .navbar{
+        grid-template-columns: 1fr;
+    }
+
+    .nav-project-col {
+        grid-template-columns: 1fr 1.5fr;
+    }
+
+    .nav-logo{
+        justify-self: flex-start;
+    }
+
+    .hero-image{
+        width: 24.4rem;
+        height: 24.4rem;
+    }
+}
+
+
+
+
+
+
