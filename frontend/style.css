@@ -284,12 +284,17 @@ textarea {
 
 
 @media screen and (max-width: 900px) {
+
+    .navbar{
+        grid-template-columns: 1fr;
+    }
+
     .nav-project-col {
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 1.5fr;
     }
 
     .nav-logo{
-        justify-self: flex-end;
+        justify-self: flex-start;
     }
 
     h1{
@@ -352,9 +357,7 @@ textarea {
 
 @media screen and (max-width: 600px){
 
-    .navbar{
-        grid-template-columns: 1fr;
-    }
+    
 
     .nav-project-col {
         grid-template-columns: 1fr 1.5fr;
