@@ -10,32 +10,38 @@
 
 @font-face {
     font-family: boldFont;
-    src: url(fonts/Inter-Bold.ttf);
+    src: url(fonts/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: secondaryFont;
+    src: url(fonts/Marcellus-Regular.ttf);
 }
 
 @font-face {
     font-family: regularFont;
-    src: url(fonts/Inter-Regular.ttf);
+    src: url(fonts/HindMadurai-Regular.ttf);
 }
 
 html {
     scroll-behavior: smooth;
-    scroll-padding: var(--navigationOffsetHeight, 1rem);
+    scroll-padding: var(--navigationOffsetHeight, 6rem);
 }
 
 body {
     font-size: 1.6rem;
-    
+		
 }
 
 h1{
     font-family: boldFont;
-    font-size: 5rem;
-
+    font-size: 12rem;
+		color: rgb(234, 234, 234);
+		-webkit-text-stroke: 4px rgb(10, 10, 10);
+		letter-spacing: -2px;
 }
 
 h2{
-    font-family: boldFont;
+    font-family: secondaryFont;
     font-size: 1rem;
     font-size: clamp(1rem, 0.8rem + 1vw, 2rem);
     margin: 2rem 0;
@@ -46,7 +52,7 @@ h2{
 
 button{
     font-family: regularFont;
-    color: white;
+    color: rgb(234, 234, 234);
     background-color: black;
     font-size: 4rem;
     padding: 1.7rem 4.4rem;
@@ -63,12 +69,40 @@ a {
 
 
 /* **************************Navbar*********************************** */
+/* .navbar-absolute {
+  position: absolute;
+	top: 0;
+	right: 0;
+  left: 0;
+} */
+
+header {
+	position: sticky;
+  top: 0;
+	z-index: 1000;
+}
 .navbar {
-    padding: 2rem 3rem 8rem 3rem;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    align-items: center;
-    position: relative;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); 
+    box-shadow: 0 2px 5px rgba(73, 73, 73, 0.1);
+    border: 2px solid black;
+    border-top: none;
+    padding: 1.5rem;
+    border-radius: 0 0 40px 40px;
+    margin: 0 2rem;
+}
+
+.navbar > div {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  position: relative;
 }
 
 .nav-project-col {
@@ -88,18 +122,20 @@ a {
 .nav-project {
     justify-content: flex-start;
     list-style: none;
-    padding: 0.8rem 1.2rem;
+    --contentWidth: 3px;
+    padding: 0.7rem max(0.5rem, 1vw - var(--contentWidth) / 2);
     background-color: rgb(0, 0, 0);
     font-size: 1rem;
-    font-size: clamp(1rem, 0.78rem + 1.42vw, 2.5rem);
+    font-size: clamp(0.625rem, 0.5071rem + 0.7547vw, 1.875rem);
     font-family: regularFont, 'Times New Roman', Times;
+    border-radius: 30px;
 }
 
-
-
 .nav-logo {
-    font-size: 1.5rem;
-    font-size: clamp(1.5rem, 1.25rem + 1.61vw, 3.2rem);
+    font-size: 2rem;
+    font-size: clamp(1.25rem, 0.9847rem + 1.6981vw, 4.0625rem);
+    text-shadow: 2px 2px 4px #0e0e0e;
+    color: rgb(234, 234, 234);
     font-family: boldFont, 'Times New Roman', Times;
     justify-self: center;
 }
@@ -111,6 +147,19 @@ a {
     gap: 15px;
 }
 
+.link a {
+    --contentWidth: 2px;
+    padding: 0.3rem max(0.1rem, 0.5vw - var(--contentWidth) / 2);
+    border-radius: 20px;
+    background-color: rgb(10, 10, 10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.link a img {
+  width: clamp(1ch, 50%, 3ch);
+}
 
 .hamburger-icon {
     display: none;
@@ -120,8 +169,8 @@ a {
     width: 30px;
     cursor: pointer;
     position: absolute;
-    top: 25px;
-    right: 25px;
+    top: 3px;
+    right: 0px;
 }
 
 .icon {
@@ -135,9 +184,10 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 100px;
     gap: 4.2rem;
-}
+    height: 100vh;
+    background: linear-gradient(rgba(128, 106, 38, 0.708), rgba(71, 25, 60, 0.69)), 
+        url('background/aperture-vintage-SshYpuf607g-unsplash.jpg') no-repeat center center/cover;}
 
 .hero-image {
     background-image: url("images/hero-image.jpg");
@@ -153,13 +203,37 @@ a {
 
 .hero-text {
     font-size: 6.4rem;
+		
+}
+
+.hero-text > p {
+	font-family: boldFont;
+	font-size: 12rem;
+    font-size: clamp(2.5rem, 1.5566rem + 6.0377vw, 12.5rem);	
+    color: rgb(234, 234, 234);
+    text-shadow: 2px 2px 4px #0e0e0e;
+	letter-spacing: 0;
+	margin: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+.email-link {
+	display: flex;
+    justify-content: center;
+	margin-top: 20px;
 }
 
 .email-me {
-    padding: 1.6rem;
-    font-size: 1.6rem;
-    background-color: black;
+    padding: 1rem 2rem;
+    font-size: clamp(1rem, 0.9175rem + 0.5283vw, 1.875rem);
+    background-color: rgb(10, 10, 10);
     font-family: regularFont, 'Times New Roman', Times;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+    border-radius: 20px;
 }
 
 .email {
@@ -182,7 +256,7 @@ a {
 /* **************Email Section******************* */
 
 .email {
-    background-color: black;
+    background-color: rgb(10, 10, 10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -220,15 +294,27 @@ a {
 
 button[type="submit"] {
     align-self: flex-end;
-    padding: 1.6rem;
-    font-size: 2.3rem;
     font-family: regularFont, 'Times New Roman', Times;
     color: black;
-    background-color: white;
+    background-color: rgb(234, 234, 234);
+    cursor: pointer;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 1rem 2rem;
+    font-size: clamp(1rem, 0.9175rem + 0.5283vw, 1.875rem);
+}
+
+button[type="submit"]  p {
+    margin-left: 10px;
 }
 
 input, textarea{
+    font-family: regularFont;
     padding: 2rem;
+    border-radius: 40px;
+    border: none;
 }
 
 textarea {
@@ -253,10 +339,13 @@ textarea {
     /* flex-wrap: wrap; */
 }
 
+
 .images-description img {
     width: 60rem;
+    border-radius: 20px;
     border: 1px solid black;
 }
+
 .images-description > div {
     display: flex;
     flex-direction: column;
@@ -274,8 +363,9 @@ textarea {
 
 .stack span {
     padding: .5rem 1rem;
-    color: white;
+    color: rgb(234, 234, 234);
     background-color: black;
+    border-radius: 20px;
 }
 
 
@@ -285,7 +375,7 @@ textarea {
 
 @media screen and (max-width: 900px) {
 
-    .navbar{
+    .navbar > div{
         grid-template-columns: 1fr;
     }
 
@@ -302,6 +392,9 @@ textarea {
     }
     .hamburger-icon {
         display: flex;
+        height: 15px;
+        width: 20px;
+        top: 5px;
     }
 
     .nav-links-social-media {
@@ -317,6 +410,7 @@ textarea {
 
     .hero {
         flex-direction: column;
+        height: 120vh;
     }
 
     .hero-image{
@@ -357,20 +451,25 @@ textarea {
 
 @media screen and (max-width: 600px){
 
-    
-
     .nav-project-col {
-        grid-template-columns: 1fr 1.5fr;
+        grid-template-columns: 1fr 1.75fr;
     }
 
     .nav-logo{
         justify-self: flex-start;
     }
 
-    .hero-image{
-        width: 24.4rem;
-        height: 24.4rem;
+    .hero {
+        height: 100vh;
     }
+
+    .hero-image{
+        width: 20.4rem;
+        height: 20.4rem;
+        min-width: 200px;
+    }
+
+
 }
 
 
